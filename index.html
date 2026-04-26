@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rahul Pagar — Senior Data Analyst specializing in BI, ML & predictive analytics. Building data-driven decision systems with SQL, Python, Power BI." />
+  <meta name="author" content="Rahul Prakash Pagar" />
+  <title>Rahul Pagar // Data Analyst</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Fraunces:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Animated grid background -->
+  <div class="grid-overlay"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- 3D Particle background canvas -->
+  <canvas id="particleBg"></canvas>
+
+  <!-- Boot loader -->
+  <div class="boot-loader" id="bootLoader">
+    <div class="boot-content">
+      <div class="boot-logo">
+        <span class="boot-bracket">[</span>
+        <span class="boot-text">RP</span>
+        <span class="boot-cursor">_</span>
+        <span class="boot-bracket">]</span>
+      </div>
+      <div class="boot-bar"><div class="boot-bar-fill" id="bootBarFill"></div></div>
+      <div class="boot-status" id="bootStatus">initializing data layer...</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">◇</span>
+        <span class="logo-name">RAHUL</span>
+        <span class="logo-tag">.dat</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" data-num="01">home</a></li>
+        <li><a href="#about" data-num="02">about</a></li>
+        <li><a href="#stack" data-num="03">stack</a></li>
+        <li><a href="#experience" data-num="04">experience</a></li>
+        <li><a href="#projects" data-num="05">projects</a></li>
+        <li><a href="#contact" data-num="06">contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">
+        <span>Get in touch</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav-mobile" id="navMobile" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <!-- 3D scene container -->
+    <div class="hero-3d" id="hero3d"></div>
+
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-meta">
+          <span class="status-dot"></span>
+          <span class="hero-meta-text">AVAILABLE FOR HIRE · DUBLIN, IE</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-line line-1">
+            <span class="word"><span>Turning</span></span>
+            <span class="word"><span>data</span></span>
+            <span class="word"><span>into</span></span>
+          </span>
+          <span class="hero-line line-2">
+            <span class="word italic"><span>decisions.</span></span>
+          </span>
+        </h1>
+
+        <div class="hero-sub">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">~/whoami</span>
+          </div>
+          <p class="hero-sub-text">
+            <span class="prompt">&gt;</span> Senior <em>Data Analyst</em> with <span class="highlight">5+ years</span> turning messy enterprise data into BI dashboards, predictive models, and decisions leadership actually trusts.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span class="btn-bg"></span>
+            <span class="btn-text">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="assets/CV_Rahul_Pagar.pdf" class="btn btn-ghost" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>Download CV</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num" data-count="5">0</div>
+            <div class="stat-label">Years<br/>Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="20">0</div>
+            <div class="stat-label">ML Models<br/>Shipped</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="15" data-suffix="+">0</div>
+            <div class="stat-label">Power BI<br/>Dashboards</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="24" data-suffix="%">0</div>
+            <div class="stat-label">Avg. Accuracy<br/>Lift</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="portrait-stack">
+          <div class="portrait-frame">
+            <div class="portrait-glow"></div>
+            <div class="portrait-rings">
+              <div class="ring r1"></div>
+              <div class="ring r2"></div>
+              <div class="ring r3"></div>
+            </div>
+            <img src="assets/profile.jpeg" alt="Rahul Pagar" class="portrait-img" />
+            <div class="portrait-corner tl"></div>
+            <div class="portrait-corner tr"></div>
+            <div class="portrait-corner bl"></div>
+            <div class="portrait-corner br"></div>
+          </div>
+
+          <!-- Floating data cards -->
+          <div class="float-card fc-1">
+            <div class="fc-label">model.score</div>
+            <div class="fc-value">0.943</div>
+            <svg viewBox="0 0 100 30" class="fc-spark">
+              <polyline points="0,25 15,20 30,22 45,12 60,15 75,8 90,5 100,3" />
+            </svg>
+          </div>
+          <div class="float-card fc-2">
+            <div class="fc-label">SQL · Python · BI</div>
+            <div class="fc-bars">
+              <span style="--h: 70%"></span><span style="--h: 90%"></span><span style="--h: 60%"></span><span style="--h: 85%"></span><span style="--h: 75%"></span>
+            </div>
+          </div>
+          <div class="float-card fc-3">
+            <div class="fc-label">ROI Δ</div>
+            <div class="fc-value pos">+18%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>SQL</span><span>·</span><span>Python</span><span>·</span><span>Power BI</span><span>·</span><span>Tableau</span><span>·</span><span>Machine Learning</span><span>·</span><span>NLP</span><span>·</span><span>Predictive Modelling</span><span>·</span><span>ETL</span><span>·</span><span>Dashboards</span><span>·</span>
+        <span>SQL</span><span>·</span><span>Python</span><span>·</span><span>Power BI</span><span>·</span><span>Tableau</span><span>·</span><span>Machine Learning</span><span>·</span><span>NLP</span><span>·</span><span>Predictive Modelling</span><span>·</span><span>ETL</span><span>·</span><span>Dashboards</span><span>·</span>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll">
+      <span>scroll</span>
+      <span class="scroll-line"><span class="scroll-line-fill"></span></span>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about">
+    <div class="section-head">
+      <span class="section-num">02 //</span>
+      <h2 class="section-title">about <span class="italic">the analyst</span></h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="about-lead">
+          I'm <strong>Rahul</strong> — a Dublin-based Senior Data Analyst with a Master's in Business Analytics and a track record of shipping analytics that move the P&amp;L.
+        </p>
+        <p class="about-body">
+          For the last five years I've worked across <em>automotive, heavy machinery and manufacturing</em> — translating tangled enterprise datasets into BI dashboards that executives actually open, ML models that flag problems before they cost money, and SQL pipelines that hum quietly in the background.
+        </p>
+        <p class="about-body">
+          Bilingual in English &amp; Marathi. Deeply curious about prediction markets, autonomous trading systems, and what happens when ML meets messy real-world ops data.
+        </p>
+
+        <div class="about-tags">
+          <span class="tag">📍 Dublin, IE</span>
+          <span class="tag">🎓 MSc Business Analytics</span>
+          <span class="tag">🇮🇳 EN · MR</span>
+          <span class="tag">💼 Open to work</span>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="info-panel">
+          <div class="panel-header">
+            <span class="panel-dot"></span>
+            <span>analyst.profile</span>
+            <span class="panel-toolbar">— □ ×</span>
+          </div>
+          <div class="panel-body">
+<pre class="code-block"><span class="c-key">name</span>      = <span class="c-str">"Rahul Prakash Pagar"</span>
+<span class="c-key">role</span>      = <span class="c-str">"Sr. Data Analyst"</span>
+<span class="c-key">location</span>  = <span class="c-str">"Dublin, Ireland"</span>
+<span class="c-key">degree</span>    = <span class="c-str">"MSc Business Analytics"</span>
+<span class="c-key">stack</span>     = [<span class="c-str">"SQL"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"PowerBI"</span>,
+             <span class="c-str">"ML"</span>, <span class="c-str">"NLP"</span>, <span class="c-str">"Tableau"</span>]
+<span class="c-key">domains</span>   = [<span class="c-str">"Automotive"</span>, <span class="c-str">"Manufacturing"</span>,
+             <span class="c-str">"Heavy Industry"</span>, <span class="c-str">"FinTech"</span>]
+<span class="c-key">currently</span> = <span class="c-str">"hunting product / IT data roles"</span>
+<span class="c-key">obsessed</span>  = <span class="c-str">"prediction markets, auto-trading"</span></pre>
+          </div>
+        </div>
+
+        <div class="ed-card">
+          <div class="ed-row">
+            <div class="ed-icon">🎓</div>
+            <div>
+              <div class="ed-school">Dublin Business School</div>
+              <div class="ed-degree">MSc Business Analytics · 2024 — 2025</div>
+            </div>
+          </div>
+          <div class="ed-row">
+            <div class="ed-icon">🏛️</div>
+            <div>
+              <div class="ed-school">K.K.W.I.E.E.R · Pune University</div>
+              <div class="ed-degree">B.E. Engineering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STACK ===== -->
+  <section id="stack" class="section stack">
+    <div class="section-head">
+      <span class="section-num">03 //</span>
+      <h2 class="section-title">technical <span class="italic">arsenal</span></h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card" data-tilt>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"/></svg>
+        </div>
+        <h3 class="stack-title">Data &amp; SQL</h3>
+        <ul class="stack-list">
+          <li>MS SQL Server</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>ETL Pipelines</li>
+          <li>Data Modeling</li>
+        </ul>
+      </div>
+
+      <div class="stack-card" data-tilt>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="stack-title">Programming</h3>
+        <ul class="stack-list">
+          <li>Python</li>
+          <li>Pandas / NumPy</li>
+          <li>Scikit-learn</li>
+          <li>SQL</li>
+          <li>Jupyter / Colab</li>
+        </ul>
+      </div>
+
+      <div class="stack-card featured" data-tilt>
+        <div class="featured-tag">CORE</div>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+        </div>
+        <h3 class="stack-title">Business Intelligence</h3>
+        <ul class="stack-list">
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>DAX / Power Query</li>
+          <li>Interactive Dashboards</li>
+          <li>Data Storytelling</li>
+        </ul>
+      </div>
+
+      <div class="stack-card" data-tilt>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 class="stack-title">ML &amp; Statistics</h3>
+        <ul class="stack-list">
+          <li>Predictive Modeling</li>
+          <li>Classification &amp; Regression</li>
+          <li>Hypothesis Testing</li>
+          <li>NLP / Text Mining</li>
+          <li>Anomaly Detection</li>
+        </ul>
+      </div>
+
+      <div class="stack-card" data-tilt>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3 class="stack-title">Cloud &amp; Tools</h3>
+        <ul class="stack-list">
+          <li>Oracle OCI</li>
+          <li>Google Colab</li>
+          <li>Git / GitHub</li>
+          <li>Excel (Advanced)</li>
+          <li>PowerPoint</li>
+        </ul>
+      </div>
+
+      <div class="stack-card" data-tilt>
+        <div class="stack-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="stack-title">Soft Skills</h3>
+        <ul class="stack-list">
+          <li>Stakeholder Translation</li>
+          <li>Cross-Functional Collab</li>
+          <li>Analytical Thinking</li>
+          <li>Bilingual: EN · MR</li>
+          <li>Mentoring &amp; Docs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certifications strip -->
+    <div class="certs-strip">
+      <div class="certs-label">CERTIFICATIONS //</div>
+      <div class="certs-track">
+        <span class="cert-pill">Oracle OCI · Data Science Pro</span>
+        <span class="cert-pill">Google Advanced Data Analytics</span>
+        <span class="cert-pill">Python for Data Science · IBM</span>
+        <span class="cert-pill">ML for Data Science · Simplilearn</span>
+        <span class="cert-pill">Tableau Visualization</span>
+        <span class="cert-pill">PG Data Science · Purdue</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section experience">
+    <div class="section-head">
+      <span class="section-num">04 //</span>
+      <h2 class="section-title">professional <span class="italic">timeline</span></h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <article class="tl-item" data-side="right">
+        <div class="tl-dot"></div>
+        <div class="tl-date">
+          <span class="tl-year">2022</span>
+          <span class="tl-range">Nov 2022 — Aug 2024</span>
+        </div>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <h3 class="tl-role">Senior Data Analyst</h3>
+            <span class="tl-company">Skoda Auto Volkswagen India Pvt. Ltd.</span>
+            <span class="tl-loc">Pune, India</span>
+          </div>
+          <ul class="tl-points">
+            <li>Led end-to-end analytics turning sprawling production datasets into Power BI dashboards leadership actually used.</li>
+            <li>Designed KPI dashboards tracking output, cost, downtime &amp; utilization → <strong>+15% performance lift</strong>.</li>
+            <li>Built Python forecasting models for demand &amp; usage trends → <strong>+18% planning accuracy</strong>.</li>
+            <li>ML model for consumption patterns + anomaly detection → <strong>7% cost saving</strong>.</li>
+            <li>Automated reporting pipelines, slashing manual analysis effort.</li>
+          </ul>
+          <div class="tl-tags">
+            <span>Power BI</span><span>Python</span><span>SQL</span><span>ML</span><span>Forecasting</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" data-side="left">
+        <div class="tl-dot"></div>
+        <div class="tl-date">
+          <span class="tl-year">2021</span>
+          <span class="tl-range">Oct 2021 — Nov 2022</span>
+        </div>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <h3 class="tl-role">Data Analyst</h3>
+            <span class="tl-company">Caterpillar India Pvt. Ltd.</span>
+            <span class="tl-loc">C. Sambhaji Nagar, India</span>
+          </div>
+          <ul class="tl-points">
+            <li>Targeted analytics use-cases on performance &amp; quality data → <strong>12% cost reduction</strong>.</li>
+            <li>Power BI dashboards on throughput, defect rate, downtime, utilization for live monitoring.</li>
+            <li>Trend, variance &amp; root cause analysis → <strong>15% reduction in repeated failure patterns</strong>.</li>
+            <li>Predictive models in Python for failure probability &amp; defect frequency.</li>
+            <li>Supervised ML for demand, usage &amp; anomaly detection → <strong>+24% early issue detection</strong>.</li>
+          </ul>
+          <div class="tl-tags">
+            <span>Predictive Modeling</span><span>Root Cause</span><span>Power BI</span><span>Python</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" data-side="right">
+        <div class="tl-dot"></div>
+        <div class="tl-date">
+          <span class="tl-year">2019</span>
+          <span class="tl-range">Oct 2019 — Oct 2021</span>
+        </div>
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <h3 class="tl-role">Operations Analyst</h3>
+            <span class="tl-company">Mahindra &amp; Mahindra Ltd.</span>
+            <span class="tl-loc">Nashik, India</span>
+          </div>
+          <ul class="tl-points">
+            <li>Cleaned &amp; prepared large test/sensor datasets in Python &amp; SQL.</li>
+            <li>Translated business problems into analytical solutions with cross-functional teams.</li>
+            <li>Descriptive &amp; diagnostic analytics on performance variations.</li>
+            <li>Built KPI dashboards for productivity, cycle time, quality &amp; efficiency.</li>
+          </ul>
+          <div class="tl-tags">
+            <span>SQL</span><span>Python</span><span>EDA</span><span>KPI Dashboards</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section projects">
+    <div class="section-head">
+      <span class="section-num">05 //</span>
+      <h2 class="section-title">selected <span class="italic">work</span></h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="proj-filters">
+      <button class="proj-filter active" data-filter="all">All</button>
+      <button class="proj-filter" data-filter="ml">Machine Learning</button>
+      <button class="proj-filter" data-filter="bi">BI / Dashboards</button>
+      <button class="proj-filter" data-filter="nlp">NLP</button>
+      <button class="proj-filter" data-filter="research">Research</button>
+    </div>
+
+    <div class="proj-grid">
+
+      <article class="proj-card" data-cat="ml research" data-tilt>
+        <div class="proj-tag">RESEARCH · ML</div>
+        <div class="proj-visual viz-1">
+          <svg viewBox="0 0 200 100" preserveAspectRatio="none">
+            <path d="M0,80 Q40,60 60,55 T120,30 T200,10" stroke="var(--accent-1)" fill="none" stroke-width="2"/>
+            <path d="M0,90 Q40,75 60,70 T120,50 T200,30" stroke="var(--accent-2)" fill="none" stroke-width="2" opacity="0.6"/>
+            <circle cx="60" cy="55" r="3" fill="var(--accent-1)"/>
+            <circle cx="120" cy="30" r="3" fill="var(--accent-1)"/>
+            <circle cx="200" cy="10" r="3" fill="var(--accent-1)"/>
+          </svg>
+        </div>
+        <h3 class="proj-title">EV Charging Peak Load Prediction</h3>
+        <p class="proj-desc">Dissertation research. ML models forecasting station-level monthly peak load using temporal + weather data. Insights for grid operators on capacity &amp; reserve allocation.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>Time Series</span><span>XGBoost</span><span>Weather APIs</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="ml nlp" data-tilt>
+        <div class="proj-tag">NLP · ML</div>
+        <div class="proj-visual viz-2">
+          <div class="viz-bars">
+            <span style="--h:60%"></span><span style="--h:80%"></span><span style="--h:45%"></span><span style="--h:90%"></span><span style="--h:65%"></span><span style="--h:75%"></span><span style="--h:50%"></span>
+          </div>
+        </div>
+        <h3 class="proj-title">SMS Spam Detection</h3>
+        <p class="proj-desc">Text-mining classifier with SVC + XGBoost delivering high-precision spam filtering. End-to-end pipeline: preprocessing, vectorization, evaluation.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>Scikit-learn</span><span>NLP</span><span>XGBoost</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="ml" data-tilt>
+        <div class="proj-tag">HEALTH · ML</div>
+        <div class="proj-visual viz-3">
+          <div class="viz-pulse">
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+              <polyline points="0,30 30,30 40,15 50,45 60,30 100,30 110,5 120,55 130,30 200,30" stroke="var(--accent-3)" fill="none" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="proj-title">Heart Attack Risk Prediction</h3>
+        <p class="proj-desc">Multi-model evaluation in Python predicting heart attack risk. Built for early identification &amp; clinical risk stratification.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>Classification</span><span>Healthcare</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="ml" data-tilt>
+        <div class="proj-tag">REGRESSION</div>
+        <div class="proj-visual viz-4">
+          <svg viewBox="0 0 200 100" preserveAspectRatio="none">
+            <g class="scatter">
+              <circle cx="20" cy="80" r="3" fill="var(--accent-1)"/>
+              <circle cx="40" cy="65" r="3" fill="var(--accent-1)"/>
+              <circle cx="60" cy="60" r="3" fill="var(--accent-1)"/>
+              <circle cx="80" cy="50" r="3" fill="var(--accent-1)"/>
+              <circle cx="100" cy="40" r="3" fill="var(--accent-1)"/>
+              <circle cx="120" cy="35" r="3" fill="var(--accent-1)"/>
+              <circle cx="140" cy="25" r="3" fill="var(--accent-1)"/>
+              <circle cx="160" cy="20" r="3" fill="var(--accent-1)"/>
+              <circle cx="180" cy="10" r="3" fill="var(--accent-1)"/>
+            </g>
+            <line x1="0" y1="90" x2="200" y2="0" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+        <h3 class="proj-title">House Price Prediction</h3>
+        <p class="proj-desc">Comparative regression study evaluating multiple algorithms for accurate &amp; scalable property price estimation.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>Regression</span><span>Feature Eng.</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="bi" data-tilt>
+        <div class="proj-tag">BI · DASHBOARD</div>
+        <div class="proj-visual viz-5">
+          <div class="viz-grid">
+            <div></div><div class="hot"></div><div></div><div></div>
+            <div></div><div></div><div class="hot"></div><div></div>
+            <div class="hot"></div><div></div><div></div><div></div>
+          </div>
+        </div>
+        <h3 class="proj-title">Cybersecurity Threat &amp; Risk Dashboard</h3>
+        <p class="proj-desc">Power BI dashboard for CISOs analyzing incidents, vulnerabilities and losses. Improved visibility &amp; prioritization for security leadership.</p>
+        <div class="proj-stack">
+          <span>Power BI</span><span>DAX</span><span>Risk Analytics</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="bi nlp" data-tilt>
+        <div class="proj-tag">ANALYTICS</div>
+        <div class="proj-visual viz-6">
+          <div class="viz-donut">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent-1)" stroke-width="12" stroke-dasharray="180 251" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent-3)" stroke-width="12" stroke-dasharray="60 251" stroke-dashoffset="-180" transform="rotate(-90 50 50)"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="proj-title">Telecom Complaints Trend Analysis</h3>
+        <p class="proj-desc">Python-driven analysis of customer complaints — uncovering trends, resolution performance and high-risk regions for service improvement.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>EDA</span><span>Visualization</span>
+        </div>
+      </article>
+
+    </div>
+
+    <a href="https://github.com/RahulprakashPagar" target="_blank" rel="noopener" class="github-strip">
+      <div class="gh-left">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        <div>
+          <div class="gh-line-1">More projects on GitHub</div>
+          <div class="gh-line-2">github.com/RahulprakashPagar</div>
+        </div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact">
+    <div class="section-head">
+      <span class="section-num">06 //</span>
+      <h2 class="section-title">let's <span class="italic">talk data</span></h2>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h3 class="contact-headline">Open to <span class="ul">data analyst</span>, <span class="ul">BI</span> &amp; <span class="ul">analytics engineering</span> roles in Ireland &amp; EU.</h3>
+        <p class="contact-sub">If you have messy data and a question worth answering — I'd love to hear about it.</p>
+
+        <div class="contact-channels">
+          <a href="mailto:rahulpagar423@gmail.com" class="ch-card">
+            <div class="ch-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">Email</div>
+              <div class="ch-value">rahulpagar423@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/rahul-pagar1993/" target="_blank" rel="noopener" class="ch-card">
+            <div class="ch-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">LinkedIn</div>
+              <div class="ch-value">linkedin.com/in/rahul-pagar1993</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/RahulprakashPagar" target="_blank" rel="noopener" class="ch-card">
+            <div class="ch-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">GitHub</div>
+              <div class="ch-value">github.com/RahulprakashPagar</div>
+            </div>
+          </a>
+
+          <a href="tel:+353894195898" class="ch-card">
+            <div class="ch-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">Phone</div>
+              <div class="ch-value">+353 89 419 5898</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="form-title">~/send-message.sh</span>
+        </div>
+        <div class="form-body">
+          <div class="form-row">
+            <label>NAME</label>
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <label>EMAIL</label>
+            <input type="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-row">
+            <label>MESSAGE</label>
+            <textarea name="message" rows="5" placeholder="Tell me about your data challenge..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <span class="prompt">$</span>
+            <span class="form-submit-text">send --priority=high</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Rahul Prakash Pagar</div>
+        <div class="footer-tag">Sr. Data Analyst · Dublin, IE</div>
+      </div>
+      <div class="footer-mid">
+        <div class="local-time" id="localTime">--:--:--</div>
+        <div class="local-label">DUBLIN · LOCAL TIME</div>
+      </div>
+      <div class="footer-right">
+        <div>Built with Three.js, vanilla JS &amp; too much coffee.</div>
+        <div class="copy">© <span id="footerYear"></span> · v1.0</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
